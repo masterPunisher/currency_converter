@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			margin-top:50px;
+			background:#333;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<h1 class="display-2 text-center mb-3">
+				Currency Converter
+			</h1>
+			<form>
+				<div class="form-group">
+					<input type="number" 
+					id="ru-input" class="form-control form-control-lg" 
+					placeholder="Enter Amount...">
+				</div>
+			</form>
+			<div id="output">
+				<div class="card bg-primary mb-2">
+					<div class="card-block">
+						<h4>Dollars :</h4>
+						<div id="do-output"></div>
+					</div>
+				</div>
+				<!-- 2nd  card-->
+				<div class="card bg-success mb-2">
+					<div class="card-block">
+						<h4>Euros :</h4>
+						<div id="eu-output"></div>
+					</div>
+				</div>
+				<!-- 3rd card -->
+				<div class="card bg-danger mb-2">
+					<div class="card-block">
+						<h4>Yen :</h4>
+						<div id="yen-output"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	document.getElementById('output').style.visibility='hidden';
+	document.getElementById('ru-input').addEventListener('input',function(e){
+
+	document.getElementById('output').style.visibility='visible';
+		let rup=e.target.value;
+		document.getElementById('do-output').innerHTML = (rup*0.013);
+		document.getElementById('eu-output').innerHTML = (rup*0.012);
+		document.getElementById('yen-output').innerHTML = (rup*1.44);
+	});
+</script>
+</body>
+</html>
